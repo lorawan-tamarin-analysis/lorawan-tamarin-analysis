@@ -20,7 +20,7 @@ The files in this repository are arranged into three main folders:
 
 Within each folder, there are a few different files. These generally refer to the different security models we consider in our paper. Each file is named `L_<version>_<model>_<sync>_<appskey>`, where:
 
-- `<version>` represents the version of LoRa (10, 11, new)
+- `<version>` represents the version of LoRa (v10, v11, vNew)
 - `<model>` represents the threat model (sec, lora, corr)
 - `<sync>` describes whether or not the Application Server confirms the well-formedness of message packets (sync, desync)
 - `<appskey>` describes whether the Application Server receives the AppSKey from the Network Server or the Join Server, via the SessionKeyID (fromNS, fromJS)
