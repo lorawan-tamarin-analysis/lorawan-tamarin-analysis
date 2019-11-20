@@ -18,11 +18,12 @@ The files in this repository are arranged into three main folders:
 - *LoRaWAN_v1_1* contains implementations of the LoRaWAN 1.1 OTAA Join protocol
 - *LoRaWAN_v1_1_extended* contains implementations of our proposed LoRaWAN LoRa-3AKA+ Join protocol
 
-Within each folder, there are a few different files. These generally refer to the different security models we consider in our paper.
+Within each folder, there are a few different files. These generally refer to the different security models we consider in our paper. Each file is named `L_<version>_<model>_<sync>_<appskey>`, where:
 
-- *_base.spthy* follows the security model introduced in the LoRaWAN specification (corresponding to our model M_LoRaSpec)
-- *_weakCorrupt.spthy* considers the situation in which the other secure channels on the network may be vulnerable (corresponding to our model M_weakCorrupt)
-- *_corrupt.spthy* considers the case where the Network Server may be fully corrupt, revealing its secrets to the adversary
+- `<version>` represents the version of LoRa (10, 11, new)
+- `<model>` represents the threat model (sec, lora, corr)
+- `<sync>` describes whether or not the Application Server confirms the well-formedness of message packets (sync, desync)
+- `<appskey>` describes whether the Application Server receives the AppSKey from the Network Server or the Join Server, via the SessionKeyID (fromNS, fromJS)
 
 Each folder also contains an `oracle.py` file, which is used by Tamarin to guide analysis.
 
